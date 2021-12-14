@@ -1,0 +1,21 @@
+﻿@inherits LayoutComponentBase
+
+<PageTitle>EDHScoreboard</PageTitle>
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu/>
+    </div>
+
+    <main>
+        <div class="top-row px-4 auth">
+            <LoginDisplay/>
+            <a href="https://github.com/KarmaKamikaze/EDHScoreboard" target="_blank">
+                            <span class="oi oi-fork" aria-hidden="true"></span>GitHub</a>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>

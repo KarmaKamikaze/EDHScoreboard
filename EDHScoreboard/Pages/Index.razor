@@ -1,0 +1,42 @@
+@page "/"
+@using SqlDataAccessLibrary.Models
+@using SqlDataAccessLibrary
+
+<h1>Scoreboard</h1>
+
+@if (_players is null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Player</th>
+            <th>Games Played</th>
+            <th>Points</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (PlayerModel player in _players)
+        {
+            <tr>
+                <td>@player.UserName</td>
+                <td>@player.GamesPlayed.ToString()</td>
+                <td>@player.Points.ToString()</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code
+{
+    private List<PlayerModel> _players;
+
+    protected override void OnInitialized()
+    {
+        _players = SqlDataAccess.LoadPlayers();
+    }
+}
