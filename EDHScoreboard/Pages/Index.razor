@@ -33,10 +33,10 @@ else
 
 @code
 {
-    private List<PlayerModel> _players;
+    private List<PlayerModel>? _players;
 
     protected override void OnInitialized()
     {
-        _players = SqlDataAccess.LoadPlayers();
+        _players = SqlDataAccess.LoadPlayers().ToList();
     }
 }
