@@ -220,6 +220,10 @@ project.lock.json
 *.feature.xlsx.*
 *.Specs_*.html
 
+# Database temp files
+database.db-shm
+database.db-wal
+
 #####
 # End of core ignore list, below put you custom 'per project' settings (patterns or path)
 #####
